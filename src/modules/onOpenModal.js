@@ -1,4 +1,5 @@
 import showComment from "./comments";
+import { getComments } from "./commentsApi";
 const onOpenModal = async (id) => {
   console.log(id);
   const serieData = await showComment(id);
@@ -13,9 +14,6 @@ const onOpenModal = async (id) => {
     <p>Genre : ${serieData.genres}</p>
     <h3>Comments</h3>
     <div class="comments">
-    <span class="time"></span>
-    <span class="username"></span>
-    <span class="body"></span>
     </div>
     <h3>Add a new comment</h3>
     <form class="my-form">
@@ -24,6 +22,23 @@ const onOpenModal = async (id) => {
     <input type="submit" class="button" value="Comment">
     </form>
   `;
+  const commentWrapper = document.querySelector(".comments");
+  try {
+    const apiComments = await getComments(id);
+    apiComments.forEach(
+      (item) =>
+        (commentWrapper.innerHTML += `<div class="oneComment">
+    <p class="time"> Date : ${item.creation_date}</p>
+    <p class="username"> User : ${item.username}</p>
+    <p class="body">Says :${item.comment}</p>
+    <div class="line"></div>
+    </div>
+    `)
+    );
+  } catch (err) {
+    console.log(err);
+  }
+
   document.querySelector(".close-btn").addEventListener("click", () => {
     popUp.remove();
   });
