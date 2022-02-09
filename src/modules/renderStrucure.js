@@ -1,5 +1,3 @@
-import showComment from "./comments";
-
 const render = (data) => {
   data.forEach((item) => {
     const list = document.getElementById("moviesList");

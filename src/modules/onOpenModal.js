@@ -13,7 +13,7 @@ const onOpenModal = async (id) => {
     <h3>Add a new comment</h3>
     <form class="my-form">
     <input type="text" class="form-control" placeholder="Add your name">
-    <input type="textarea" class="form-control" placeholder="Add your comment">
+    <textarea class="form-control" placeholder="Add your comment"></textarea>
     <input type="submit" class="button" value="Comment">
     </form>
   `;
