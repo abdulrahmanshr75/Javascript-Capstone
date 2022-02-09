@@ -1,8 +1,8 @@
 import "./style.css";
 import getMovies from "./modules/apiCall.js";
-import { render } from "./modules/renderStrucure.js";
 import render from "./modules/renderStrucure.js";
 import { postLikes, getLikes } from "./modules/getLikes.js";
+import onOpenModal from "./modules/onOpenModal";
 
 const starter = async () => {
   const data = await getMovies();
@@ -10,6 +10,11 @@ const starter = async () => {
   await getLikes();
   data.forEach(async (e) => {
     return await postLikes(e.id);
+  });
+  document.querySelectorAll(".btn").forEach((item) => {
+    item.addEventListener("click", () => {
+      onOpenModal(item.dataset.modal);
+    });
   });
 };
 

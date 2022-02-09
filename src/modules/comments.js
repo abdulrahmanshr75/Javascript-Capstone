@@ -1,6 +1,7 @@
-const showComment = async () => {
-  const moviesData = await fetch("https://api.tvmaze.com/shows?page=1");
+const showComment = async (e) => {
+  const moviesData = await fetch(`https://api.tvmaze.com/shows/${e}`);
   const allData = await moviesData.json();
-  const content = document.createElement("div");
-  body.append(content);
+  return allData;
 };
+
+export default showComment;

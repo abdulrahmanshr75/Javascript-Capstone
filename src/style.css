@@ -84,6 +84,26 @@ button:hover {
   border: 2px solid #333;
 }
 
+.hide {
+  display: none;
+}
+
+.popup {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  width: 375px;
+  background-color: #fff;
+  border: 1px solid #333;
+  border-radius: 8px;
+  top: 50%;
+  left: 50%;
+  padding-top: 16px;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
 .image-card {
   display: flex;
   padding: 0;
@@ -95,6 +115,27 @@ button:hover {
   height: 35vh;
 }
 
+.popup-image {
+  width: 200px;
+}
+
+.button {
+  background-color: #fff;
+  border: 2px solid #333;
+  padding: 8px 12px;
+  font-size: 15px;
+  margin: 12px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #333;
+  color: #fff;
+  transition: 0.5s ease-in-out;
+}
+
 .btn {
   font-weight: bold;
   font-family: "Nunito", sans-serif;
@@ -104,4 +145,24 @@ button:hover {
 .btn:hover {
   background-color: #333;
   color: #fff;
+}
+
+.my-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.close-btn {
+  position: absolute;
+  font-size: 25px;
+  right: 50px;
+  cursor: pointer;
+}
+
+.form-control {
+  margin: 5px;
+  padding: 8px 20px;
+  font-size: 18px;
 }
