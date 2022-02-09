@@ -11,6 +11,11 @@ const starter = async () => {
   data.forEach(async (e) => {
     return await postLikes(e.id);
   });
+  document.querySelectorAll(".btn").forEach((item) => {
+    item.addEventListener("click", () => {
+      onOpenModal(item.dataset.modal);
+    });
+  });
 };
 
 starter();
