@@ -4,7 +4,6 @@ import { commentPost } from "./commentsApi";
 import fetchComments from "./fetchComments";
 const onOpenModal = async (id) => {
   const serieData = await showComment(id);
-  console.log(serieData);
   const popUp = document.createElement("div");
   document.body.append(popUp);
   popUp.classList.add("open");
@@ -33,7 +32,7 @@ const onOpenModal = async (id) => {
       title.innerHTML = `Comments (${counter})`;
     }, 1000);
   } catch (err) {
-    console.log(err);
+    throw new Error("Failed...");
   }
   const form = document.getElementById("comment-form");
   const username = document.getElementById("username");
@@ -59,7 +58,7 @@ const onOpenModal = async (id) => {
           loading = false;
         }
       } catch (err) {
-        console.log(err);
+        throw new Error("failed..");
       }
     }
   });
