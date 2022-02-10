@@ -13,9 +13,21 @@ export const commentPost = async (itemId, username, comment) => {
 };
 
 export const getComments = async (id) => {
+<<<<<<< Updated upstream
   const api = await fetch(
     `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${id}`
   );
   const res = await api.json();
   return res;
+=======
+  try {
+    const api = await fetch(
+      `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${id}`
+    );
+    const res = await api.json();
+    return res;
+  } catch (err) {
+    throw new Error("failed");
+  }
+>>>>>>> Stashed changes
 };

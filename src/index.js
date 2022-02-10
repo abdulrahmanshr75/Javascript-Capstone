@@ -1,8 +1,21 @@
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+import './style.css';
+import getMovies from './modules/apiCall.js';
+import render from './modules/renderStrucure.js';
+=======
+>>>>>>> Stashed changes
 import "./style.css";
 import getMovies from "./modules/apiCall.js";
 import render from "./modules/renderStrucure.js";
 import { postLikes, getLikes } from "./modules/getLikes.js";
 import onOpenModal from "./modules/onOpenModal";
+<<<<<<< Updated upstream
+=======
+import commentCounter from "./modules/commentCounter";
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 const starter = async () => {
   const data = await getMovies();
