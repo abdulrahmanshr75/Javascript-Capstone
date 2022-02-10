@@ -1,4 +1,4 @@
-export const appId = "BdTjDna5tsQY8gvFaUA7";
+export const appId = "Jly4f1WO7wdijNbTj3up";
 const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`;
 export const postLikes = async (id) => {
   const postObject = { item_id: id };
