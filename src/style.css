@@ -13,8 +13,8 @@ header {
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
-  height: 48px;
+  justify-content: center;
+  height: 58px;
   background-color: #333;
 }
 
@@ -79,8 +79,31 @@ button:hover {
   align-items: center;
   justify-content: center;
   background-color: lavenderblush;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 20px;
+  border: 2px solid #333;
+}
+
+.hide {
+  display: none;
+}
+
+.open {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  width: 375px;
+  height: 100%;
+  background-color: #fff;
+  border: 1px solid #333;
+  border-radius: 8px;
+  top: 50%;
+  left: 50%;
+  padding-top: 16px;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  overflow: scroll;
 }
 
 .image-card {
@@ -94,21 +117,59 @@ button:hover {
   height: 35vh;
 }
 
-.subtitles {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
+.popup-image {
+  width: 200px;
 }
 
-.span-icon {
-  background-color: red;
+.button {
+  background-color: #fff;
+  border: 2px solid #333;
+  padding: 8px 12px;
+  font-size: 15px;
+  margin: 12px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #333;
   color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 10px;
-  padding: 2px;
+  transition: 0.5s ease-in-out;
 }
 
-.like {
-  font-size: 23px;
+.btn {
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
+  font-size: 13px;
+}
+
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.my-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.close-btn {
+  position: absolute;
+  font-size: 25px;
+  right: 50px;
+  cursor: pointer;
+}
+
+.form-control {
+  margin: 5px;
+  padding: 8px 20px;
+  font-size: 18px;
+}
+
+.line {
+  width: 80px;
+  border-top: 2px solid #333;
 }

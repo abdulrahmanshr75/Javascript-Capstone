@@ -1,8 +1,8 @@
 import co from "co";
-
 const likeIcon = document.getElementById("moviesList");
+export const appId = "Jly4f1WO7wdijNbTj3up";
 const url =
-  "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Jly4f1WO7wdijNbTj3up/likes";
+  `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`;
 export const postLikes = async (id) => {
   const postObject = { item_id: id };
   const response = await fetch(url, {

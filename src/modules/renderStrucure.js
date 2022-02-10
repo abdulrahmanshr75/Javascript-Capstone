@@ -1,3 +1,4 @@
+
 import { updateLikes } from "./getLikes.js";
 
 const render = async (data) => {
@@ -7,13 +8,13 @@ const render = async (data) => {
     list.innerHTML += `
     <div class="grid-items">
     <ul class="image-card">
-    <img src="${e.image.original}" alt="">
+    <img src="${item.image.original}" alt="">
     </ul>
     <div class="subtitles">
     <h4>${e.name} </h4>
     <i class="fa fa-heart like"><span class="span-icon" id="${e.id}">${likes}</span></i>
     </div>
-    <button id="button">Comments</i></button>
+    <button class="btn" id="button" data-modal=${item.id}>Comments</button>
     </div>
   `;
   });
