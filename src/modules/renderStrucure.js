@@ -1,9 +1,5 @@
-
-import { updateLikes } from "./getLikes.js";
-
-const render = async (data) => {
-  data.forEach(async (e) => {
-    const likes = await updateLikes(e.id);
+const render = (data) => {
+  data.forEach((item) => {
     const list = document.getElementById("moviesList");
     list.innerHTML += `
     <div class="grid-items">
@@ -11,8 +7,7 @@ const render = async (data) => {
     <img src="${item.image.original}" alt="">
     </ul>
     <div class="subtitles">
-    <h4>${e.name} </h4>
-    <i class="fa fa-heart like"><span class="span-icon" id="${e.id}">${likes}</span></i>
+    <h4>${item.name}  <i class="fa fa-heart"></i></h4>
     </div>
     <button class="btn" id="button" data-modal=${item.id}>Comments</button>
     </div>
