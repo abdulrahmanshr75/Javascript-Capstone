@@ -1,4 +1,4 @@
-import { appId } from './getLikes';
+import { appId } from './getLikes.js';
 
 export const commentPost = async (itemId, username, comment) => {
   const api = await fetch(

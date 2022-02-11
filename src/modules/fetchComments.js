@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+/* eslint-disable no-return-assign */
 import { getComments } from './commentsApi.js';
 
 const fetchComments = async (id) => {
