@@ -1,7 +1,7 @@
 import "./style.css";
 import getMovies from "./modules/apiCall.js";
 import render from "./modules/renderStrucure.js";
-import { postLikes, getLikes, displayCounts } from "./modules/getLikes.js";
+import { postLikes, displayCounts } from "./modules/getLikes.js";
 import moviesCounter from "./modules/itemsCounter.js";
 import onOpenModal from "./modules/onOpenModal";
 
@@ -10,15 +10,13 @@ const starter = async () => {
   await render(data);
   const films = moviesCounter(data);
   displayCounts(films);
-  await getLikes();
   data.forEach(async (e) => {
     return await postLikes(e.id);
   });
-
-  document.querySelectorAll(".btn").forEach((item) => {
-    item.addEventListener("click", () => {
-      onOpenModal(item.dataset.modal);
-    });
+  document.querySelector(".movies-section").addEventListener("click", (e) => {
+    if (e.target.matches(".btn")) {
+      onOpenModal(e.target.id);
+    }
   });
 };
 

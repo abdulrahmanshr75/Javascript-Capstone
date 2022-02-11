@@ -1,8 +1,6 @@
-import co from "co";
 const likeIcon = document.getElementById("moviesList");
-export const appId = "Jly4f1WO7wdijNbTj3up";
-const url =
-  `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`;
+export const appId = "XBg0cfk8RvuAxw7vUWqY";
+const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`;
 export const postLikes = async (id) => {
   const postObject = { item_id: id };
   const response = await fetch(url, {
@@ -27,6 +25,7 @@ export const updateLikes = async (id) => {
       results = e.likes;
     }
   });
+
   return results;
 };
 
@@ -45,8 +44,8 @@ likeIcon.addEventListener("click", (e) => {
     const icon = e.target;
     const likeId = icon.parentNode.querySelector("span").id;
     const addElem = icon.parentNode.querySelector("span");
+    addElement(addElem);
     postLikes(likeId);
     updateLikes(likeId);
-    addElement(addElem);
   }
 });
