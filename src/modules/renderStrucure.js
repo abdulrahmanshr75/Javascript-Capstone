@@ -1,6 +1,6 @@
 const render = (data) => {
   data.forEach((item) => {
-    const list = document.getElementById("moviesList");
+    const list = document.getElementById('moviesList');
     list.innerHTML += `
     <div class="grid-items">
     <ul class="image-card">
