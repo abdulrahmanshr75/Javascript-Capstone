@@ -2,9 +2,6 @@
 
 ![screenshot](images/screenshot.png)
 
-## Live Demo
-
-
 
 ## Built with
 
