@@ -1,12 +1,13 @@
-import commentCounter from "./commentCounter";
-import showComment from "./comments";
-import { commentPost } from "./commentsApi";
-import fetchComments from "./fetchComments";
+import commentCounter from './commentCounter';
+import showComment from './comments';
+import { commentPost } from './commentsApi';
+import fetchComments from './fetchComments';
+
 const onOpenModal = async (id) => {
   const serieData = await showComment(id);
-  const popUp = document.createElement("div");
+  const popUp = document.createElement('div');
   document.body.append(popUp);
-  popUp.classList.add("open");
+  popUp.classList.add('open');
   popUp.innerHTML += `
     <img class="popup-image" src=${serieData.image.original}>
     <span class="close-btn">&times;</span>
@@ -22,8 +23,8 @@ const onOpenModal = async (id) => {
     <input type="submit" class="button" value="Comment">
     </form>
   `;
-  const commentWrapper = document.querySelector(".comments");
-  const title = document.querySelector(".comment-title");
+  const commentWrapper = document.querySelector('.comments');
+  const title = document.querySelector('.comment-title');
 
   try {
     fetchComments(id);
@@ -32,23 +33,23 @@ const onOpenModal = async (id) => {
       title.innerHTML = `Comments (${counter})`;
     }, 1000);
   } catch (err) {
-    throw new Error("Failed...");
+    throw new Error('Failed...');
   }
-  const form = document.getElementById("comment-form");
-  const username = document.getElementById("username");
-  const commentBody = document.getElementById("comment-body");
-  form.addEventListener("submit", (e) => {
+  const form = document.getElementById('comment-form');
+  const username = document.getElementById('username');
+  const commentBody = document.getElementById('comment-body');
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (username.value && commentBody.value) {
       try {
         commentPost(id, username.value, commentBody.value);
-        username.value = "";
-        commentBody.value = "";
+        username.value = '';
+        commentBody.value = '';
         let loading = true;
         if (loading) {
-          commentWrapper.textContent = "Loading....";
+          commentWrapper.textContent = 'Loading....';
           setTimeout(() => {
-            commentWrapper.textContent = "";
+            commentWrapper.textContent = '';
             fetchComments(id);
             setTimeout(() => {
               const counter = commentCounter(commentWrapper);
@@ -58,12 +59,12 @@ const onOpenModal = async (id) => {
           loading = false;
         }
       } catch (err) {
-        throw new Error("failed..");
+        throw new Error('failed..');
       }
     }
   });
 
-  document.querySelector(".close-btn").addEventListener("click", () => {
+  document.querySelector('.close-btn').addEventListener('click', () => {
     popUp.remove();
   });
 };

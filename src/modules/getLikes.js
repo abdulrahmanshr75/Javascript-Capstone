@@ -4,8 +4,8 @@ const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/
 export const postLikes = async (id) => {
   const postObject = { item_id: id };
   const response = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(postObject),
   });
   return response;
@@ -35,12 +35,12 @@ export const addElement = (e) => {
 };
 
 export const displayCounts = (myMovies) => {
-  const counts = document.querySelector(".mymovies");
+  const counts = document.querySelector('.mymovies');
   counts.innerText = `${myMovies} Movies`;
 };
 
-likeIcon.addEventListener("click", (e) => {
-  if (e.target.className === "fa fa-heart like") {
+likeIcon.addEventListener('click', (e) => {
+  if (e.target.className === 'fa fa-heart like') {
     const icon = e.target;
     const likeId = icon.parentNode.querySelector("span").id;
     const addElem = icon.parentNode.querySelector("span");
