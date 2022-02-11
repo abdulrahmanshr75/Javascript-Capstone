@@ -1,5 +1,7 @@
 {
   "devDependencies": {
+    "@babel/node": "^7.16.8",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.8",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.6.0",
     "eslint": "^7.32.0",
@@ -136,6 +138,7 @@
     "jest-docblock": "^27.5.0",
     "jest-each": "^27.5.0",
     "jest-environment-jsdom": "^27.5.0",
+    "jest-environment-jsdom-latest": "^26.6.2",
     "jest-environment-node": "^27.5.0",
     "jest-get-type": "^27.5.0",
     "jest-haste-map": "^27.5.0",
@@ -268,7 +271,8 @@
     "yargs-parser": "^20.2.9"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist",
+    "test": "jest",
     "build": "webpack",
     "start": "webpack serve --open"
   },
