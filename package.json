@@ -271,6 +271,7 @@
     "yargs-parser": "^20.2.9"
   },
   "scripts": {
+    "deploy": "gh-pages -d dist",
     "test": "jest",
     "build": "webpack",
     "start": "webpack serve --open"
