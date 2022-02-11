@@ -1,7 +1,7 @@
-import commentCounter from './commentCounter';
-import showComment from './comments';
-import { commentPost } from './commentsApi';
-import fetchComments from './fetchComments';
+import commentCounter from './commentCounter.js';
+import showComment from './comments.js';
+import { commentPost } from './commentsApi.js';
+import fetchComments from './fetchComments.js';
 
 const onOpenModal = async (id) => {
   const serieData = await showComment(id);

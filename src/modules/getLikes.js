@@ -1,5 +1,5 @@
-const likeIcon = document.getElementById("moviesList");
-export const appId = "XBg0cfk8RvuAxw7vUWqY";
+const likeIcon = document.getElementById('moviesList');
+export const appId = 'XBg0cfk8RvuAxw7vUWqY';
 const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`;
 export const postLikes = async (id) => {
   const postObject = { item_id: id };
@@ -42,8 +42,8 @@ export const displayCounts = (myMovies) => {
 likeIcon.addEventListener('click', (e) => {
   if (e.target.className === 'fa fa-heart like') {
     const icon = e.target;
-    const likeId = icon.parentNode.querySelector("span").id;
-    const addElem = icon.parentNode.querySelector("span");
+    const likeId = icon.parentNode.querySelector('span').id;
+    const addElem = icon.parentNode.querySelector('span');
     addElement(addElem);
     postLikes(likeId);
     updateLikes(likeId);

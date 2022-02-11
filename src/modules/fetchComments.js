@@ -1,4 +1,4 @@
-import { getComments } from './commentsApi';
+import { getComments } from './commentsApi.js';
 
 const fetchComments = async (id) => {
   const commentWrapper = document.querySelector('.comments');

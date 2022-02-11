@@ -1,9 +1,9 @@
-import { updateLikes } from "./getLikes.js";
+import { updateLikes } from './getLikes.js';
 
 const render = (data) => {
   data.forEach(async (item) => {
     const likes = await updateLikes(item.id);
-    const list = document.getElementById("moviesList");
+    const list = document.getElementById('moviesList');
     list.innerHTML += `
     <div class="grid-items">
     <ul class="image-card">
